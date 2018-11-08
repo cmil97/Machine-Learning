@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  3 15:45:13 2018
+
+@author: chrismiller
+"""
+
+from scipy.stats import poisson
+import math
+
+# creating my own poisson pmf function
+def poisson_pmf(y, lam):
+    return (lam ** y) / (math.factorial(y)) * (math.exp(-lam))
+
+# take 2 end points, add pmf values between each endpoint, return value
+def poisson_pmf_range(a, b, lam):
+    Sum = 0
+    
+    for i in range(a, b+1):
+        Sum += poisson_pmf(i, lam)
+        
+    return Sum
+
+# can also take the endpoints and subtract the cdf values to get the same value        
+def poisson_pmf_range2(a, b, lam):
+    return poisson.cdf(b, lam) - poisson.cdf(a-1, lam)
+    
+# problem (a) by adding pmf values using our own poisson pmf function
+answer = poisson_pmf_range(5, 10, 7)
+print(answer)
+
+# problem (a) by subtracting the poisson cdf using scipy poisson function
+answer2 = poisson_pmf_range2(5, 10, 7)
+print(answer2)
+
+# problem (b) using the fact that the two partitions must add up to 1
+print(1-answer)
