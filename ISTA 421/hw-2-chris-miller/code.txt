@@ -1,0 +1,21 @@
+python version: 
+
+3.6
+
+
+instructions for executing code from the terminal (Mac): 
+
+1. Download my zip file
+2. unzip the file in the Downloads folder
+3. type: cd Downloads
+4. type: python "hw-2-chris-miller/cv.py"
+5. type: python "hw-2-chris-miller/fitpoly.py"
+
+
+instructions for executing code from the command line (Windows): 
+
+1. Download my zip file
+2. unzip the file in the Downloads folder
+3. type: cd \Downloads
+4. type: hw-2-chris-miller\cv.py
+5. type: hw-2-chris-miller\fitpoly.py
